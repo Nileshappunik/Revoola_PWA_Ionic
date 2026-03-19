@@ -32,10 +32,7 @@
 
       <!-- Back chevron — mirrors ivBack -->
       <button class="btn-back" (click)="goBack()" aria-label="Back">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-          <path d="M15 18l-6-6 6-6" stroke="#00C896" stroke-width="2.5"
-                stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
+        <img class="icon-img icon-back" src="assets/images/body-class-icons/ic_chevron_left.svg" alt="" />
       </button>
 
       <!-- Overlay: title + WITH instructor -->
@@ -56,22 +53,19 @@
 
         <!-- Duration col — img_minutes + txt_minutes -->
         <div class="stat-col">
-          <svg class="stat-icon" viewBox="0 0 24 24" fill="none">
-            <circle cx="12" cy="12" r="9" stroke="#1a1a1a" stroke-width="1.8"/>
-            <path d="M12 7v5l3 3" stroke="#1a1a1a" stroke-width="1.8"
-                  stroke-linecap="round"/>
-          </svg>
-          <span class="stat-text">{{ videoData.duration }} MIN CLASS</span>
+          <img class="stat-icon" src="assets/images/body-class-icons/fd_active_time_green.svg" alt="" />
+          <span class="stat-text">{{ videoData.duration }} CLASS</span>
         </div>
 
         <div class="stat-divider"></div>
 
         <!-- Difficulty col — img_video + txt_video -->
         <div class="stat-col stat-col--right">
-          <span class="stat-icon-emoji">{{ getDifficultyIcon(videoData.difficulty) }}</span>
+          
           <span class="stat-text" [ngClass]="getDifficultyClass(videoData.difficulty)">
             {{ videoData.difficulty | uppercase }}
           </span>
+          <img class="stat-difficulty-icon" [src]="getDifficultyIconPath(videoData.difficulty)" alt="" />
         </div>
       </div>
 
@@ -82,12 +76,7 @@
 
         <!-- Warmup -->
         <div class="worklog-item">
-          <svg class="worklog-icon" viewBox="0 0 24 24" fill="none">
-            <path d="M12 2C8 2 5 6 5 10c0 5 7 12 7 12s7-7 7-12c0-4-3-8-7-8z"
-                  fill="#00C896" opacity=".25"/>
-            <path d="M12 6v6l3 2" stroke="#00C896" stroke-width="1.8"
-                  stroke-linecap="round"/>
-          </svg>
+          <img class="worklog-icon" src="assets/images/body-class-icons/ic_warmuptime_body_class.svg" alt="" />
           <div class="worklog-text">
             <span class="worklog-time">{{ videoData.minwarmup }} MIN</span>
             <span class="worklog-label">WARMUP</span>
@@ -96,10 +85,7 @@
 
         <!-- Workout -->
         <div class="worklog-item">
-          <svg class="worklog-icon" viewBox="0 0 24 24" fill="none">
-            <path d="M6 12h12M6 12l3-3m-3 3l3 3M18 12l-3-3m3 3l-3 3"
-                  stroke="#1a1a1a" stroke-width="1.8" stroke-linecap="round"/>
-          </svg>
+          <img class="worklog-icon" src="assets/images/body-class-icons/ic_work_time_body_class.svg" alt="" />
           <div class="worklog-text">
             <span class="worklog-time">{{ videoData.mininstruction }} MIN</span>
             <span class="worklog-label">WORKOUT</span>
@@ -108,12 +94,7 @@
 
         <!-- Cooldown -->
         <div class="worklog-item">
-          <svg class="worklog-icon" viewBox="0 0 24 24" fill="none">
-            <circle cx="12" cy="12" r="8" stroke="#888" stroke-width="1.6"
-                    stroke-dasharray="3 2"/>
-            <path d="M12 8v4l2 2" stroke="#888" stroke-width="1.8"
-                  stroke-linecap="round"/>
-          </svg>
+          <img class="worklog-icon" src="assets/images/body-class-icons/ic_cooldown_time_body_class.svg" alt="" />
           <div class="worklog-text">
             <span class="worklog-time">{{ videoData.mincooldown }} MIN</span>
             <span class="worklog-label">COOLDOWN</span>

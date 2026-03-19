@@ -98,10 +98,10 @@ export class BodyClassViewPage implements OnInit, OnDestroy {
     return 'difficulty-intermediate';
   }
 
-  getDifficultyIcon(difficulty: string): string {
-    if (difficulty === 'Beginner') return '🟢';
-    if (difficulty === 'Advanced') return '🔴';
-    return '🟠';
+  getDifficultyIconPath(difficulty: string): string {
+    if (difficulty === 'Beginner') return 'assets/images/body-class-icons/ic_easy_body_class.svg';
+    if (difficulty === 'Advanced') return 'assets/images/body-class-icons/ic_hard_body_class.svg';
+    return 'assets/images/body-class-icons/ic_medium_body_class.svg';
   }
 
   private lockPortrait(): void {

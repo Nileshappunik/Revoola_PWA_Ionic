@@ -38,11 +38,7 @@
         [class.timer-panel--hidden]="!timerPanelVisible"
       >
         <!-- img_icon (clock) -->
-        <svg class="timer-icon" viewBox="0 0 24 24" fill="none">
-          <circle cx="12" cy="12" r="9" stroke="rgba(255,255,255,0.7)" stroke-width="1.8"/>
-          <path d="M12 7v5l3 2" stroke="rgba(255,255,255,0.7)" stroke-width="1.8"
-                stroke-linecap="round"/>
-        </svg>
+        <img class="timer-icon" src="assets/images/body-class-icons/fd_active_time_green.svg" alt="" />
 
         <!-- txt_name "TIME" label -->
         <span class="timer-label">TIME</span>
@@ -67,19 +63,8 @@
       <!-- Pause / Resume — btn_pause_resume + txt_pause_resume -->
       <div class="ctrl-btn" (click)="togglePause()">
         <div class="ctrl-icon">
-          <!-- Pause icon (shown when playing) -->
-          <svg *ngIf="!isPaused" viewBox="0 0 100 100" fill="none">
-            <circle cx="50" cy="50" r="48" fill="rgba(255,255,255,0.15)"
-                    stroke="rgba(255,255,255,0.6)" stroke-width="3"/>
-            <rect x="32" y="28" width="12" height="44" rx="4" fill="white"/>
-            <rect x="56" y="28" width="12" height="44" rx="4" fill="white"/>
-          </svg>
-          <!-- Play / Resume icon (shown when paused) -->
-          <svg *ngIf="isPaused" viewBox="0 0 100 100" fill="none">
-            <circle cx="50" cy="50" r="48" fill="rgba(255,255,255,0.15)"
-                    stroke="rgba(255,255,255,0.6)" stroke-width="3"/>
-            <path d="M38 28l36 22-36 22V28z" fill="white"/>
-          </svg>
+          <img *ngIf="!isPaused" src="assets/images/body-class-icons/ic_pause_button_body_class.svg" alt="" />
+          <img *ngIf="isPaused" src="assets/images/body-class-icons/ic_playbutton2_body_class.svg" alt="" />
         </div>
         <span class="ctrl-label">{{ isPaused ? 'RESUME' : 'PAUSE' }}</span>
       </div>
@@ -87,11 +72,7 @@
       <!-- Stop — btn_stop + txt_stop -->
       <div class="ctrl-btn ctrl-btn--stop" (click)="stopVideo()">
         <div class="ctrl-icon">
-          <svg viewBox="0 0 100 100" fill="none">
-            <circle cx="50" cy="50" r="48" fill="rgba(255,255,255,0.15)"
-                    stroke="rgba(255,255,255,0.6)" stroke-width="3"/>
-            <rect x="30" y="30" width="40" height="40" rx="5" fill="white"/>
-          </svg>
+          <img src="assets/images/body-class-icons/ic_stop_button.svg" alt="" />
         </div>
         <span class="ctrl-label">STOP</span>
       </div>
@@ -123,17 +104,13 @@
         <div class="countdown-stats">
           <!-- Duration col -->
           <div class="cdown-stat">
-            <svg class="cdown-stat-icon" viewBox="0 0 24 24" fill="none">
-              <circle cx="12" cy="12" r="9" stroke="rgba(150,150,150,0.8)" stroke-width="1.6"/>
-              <path d="M12 7v5l3 2" stroke="rgba(150,150,150,0.8)" stroke-width="1.6"
-                    stroke-linecap="round"/>
-            </svg>
+            <img class="cdown-stat-icon" src="assets/images/body-class-icons/fd_active_time_green.svg" alt="" />
             <span class="cdown-stat-text">{{ videoData.duration }} mins</span>
           </div>
 
           <!-- Difficulty col -->
           <div class="cdown-stat">
-            <span class="cdown-difficulty-icon">{{ difficultyIcon }}</span>
+            <img class="cdown-difficulty-icon" [src]="difficultyIconPath" alt="" />
             <span class="cdown-stat-text" [ngClass]="difficultyClass">
               {{ videoData.difficulty }}
             </span>

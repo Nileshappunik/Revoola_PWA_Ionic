@@ -62,7 +62,7 @@ export class BodyClassVideoPage implements OnInit, OnDestroy {
 
   // Difficulty
   difficultyClass = '';
-  difficultyIcon = '';
+  difficultyIconPath = '';
 
   // ── Private ──────────────────────────────────────────────────────────────
   private countdownTimer: ReturnType<typeof setInterval> | null = null;
@@ -273,13 +273,13 @@ export class BodyClassVideoPage implements OnInit, OnDestroy {
   private setDifficulty(difficulty: string): void {
     if (difficulty === 'Beginner') {
       this.difficultyClass = 'difficulty-beginner';
-      this.difficultyIcon = '🟢';
+      this.difficultyIconPath = 'assets/images/body-class-icons/ic_easy_body_class.svg';
     } else if (difficulty === 'Advanced') {
       this.difficultyClass = 'difficulty-advanced';
-      this.difficultyIcon = '🔴';
+      this.difficultyIconPath = 'assets/images/body-class-icons/ic_hard_body_class.svg';
     } else {
       this.difficultyClass = 'difficulty-intermediate';
-      this.difficultyIcon = '🟠';
+      this.difficultyIconPath = 'assets/images/body-class-icons/ic_medium_body_class.svg';
     }
   }
 

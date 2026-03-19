@@ -82,8 +82,9 @@
   justify-content: center;
   z-index: 10;
 
-  svg path {
-    stroke: #00c896;
+  .icon-back {
+    width: 24px;
+    height: 24px;
   }
 
   &:active {
@@ -142,10 +143,6 @@
 }
 
 // ── Stats card — lay_timevideo (2 cols) + divider + lay_worklog ───────────────
-.stats-card {
-  // No extra padding; inner rows handle it
-}
-
 .stats-row {
   display: flex;
   align-items: stretch;
@@ -166,14 +163,15 @@
 }
 
 .stat-icon {
-  width: 16px;
-  height: 16px;
+  width: 14px;
+  height: 14px;
   flex-shrink: 0;
 }
 
-.stat-icon-emoji {
-  font-size: 16px;
-  line-height: 1;
+.stat-difficulty-icon {
+  width: 25px;
+  height: 7px;
+  flex-shrink: 0;
 }
 
 .stat-text {
@@ -213,7 +211,7 @@
 
 .worklog-icon {
   width: 16px;
-  height: 16px;
+  height: 17px;
   flex-shrink: 0;
 }
 
