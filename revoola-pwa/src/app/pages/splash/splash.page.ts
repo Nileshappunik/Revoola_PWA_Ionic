@@ -16,10 +16,18 @@ import { CommonModule } from '@angular/common';
 })
 export class SplashPage implements OnInit, OnDestroy {
   private timer: ReturnType<typeof setTimeout> | null = null;
+  isDesktop = false;
 
   constructor(private router: Router) {}
 
   ngOnInit(): void {
+    this.isDesktop = this.checkDesktopView();
+
+    // Desktop: show only static message, no splash flow.
+    if (this.isDesktop) {
+      return;
+    }
+
     // Force portrait — same as RLToolsBodyClass.rl_screenSet(false, activity)
     this.lockPortrait();
 
@@ -41,6 +49,14 @@ export class SplashPage implements OnInit, OnDestroy {
       }
     } catch {
       // Not all browsers support this; silently skip
+    }
+  }
+
+  private checkDesktopView(): boolean {
+    try {
+      return window.matchMedia('(min-width: 992px)').matches;
+    } catch {
+      return false;
     }
   }
 }

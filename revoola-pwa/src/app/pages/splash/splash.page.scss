@@ -10,6 +10,22 @@
   --background: #ffffff;
 }
 
+.desktop-message-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 24px;
+  text-align: center;
+}
+
+.desktop-message {
+  font-family: var(--font-semibold);
+  font-size: 24px;
+  color: var(--app-black);
+  margin: 0;
+}
+
 .splash-wrapper {
   display: flex;
   flex-direction: column;

@@ -1,6 +1,10 @@
 <ion-content [fullscreen]="true" class="splash-content">
-  <div class="splash-wrapper">
+  <div *ngIf="isDesktop" class="desktop-message-wrapper">
+    <p class="desktop-message">Its working only mobile screen.</p>
+  </div>
 
+  <div *ngIf="!isDesktop" class="splash-wrapper">
+ 
     <!-- Logo — mirrors android:src="@drawable/ic_revoola_logo" -->
     <div class="logo-section">
       <img src="assets/images/ic_revoola_logo.png" alt="Revoola" class="logo-image" />

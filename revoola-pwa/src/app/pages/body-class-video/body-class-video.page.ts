@@ -97,7 +97,6 @@ export class BodyClassVideoPage implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.clearTimers();
     this.unlockOrientation();
-    this.restoreStatusBar();
   }
 
   // ── Navigation state ─────────────────────────────────────────────────────
@@ -135,7 +134,6 @@ export class BodyClassVideoPage implements OnInit, OnDestroy {
 
   // ── After view — start video + countdown ─────────────────────────────────
   ngAfterViewInit(): void {
-    this.hideStatusBar();
     this.startCountdown();
   }
 
@@ -219,7 +217,6 @@ export class BodyClassVideoPage implements OnInit, OnDestroy {
       video.currentTime = 0;
     }
     this.clearTimers();
-    this.restoreStatusBar();
     this.showUpgradeDialog = true;
   }
 
@@ -294,17 +291,6 @@ export class BodyClassVideoPage implements OnInit, OnDestroy {
     try {
       (window.screen as any).orientation?.unlock();
     } catch { /* ignore */ }
-  }
-
-  // ── Status bar helpers — mirrors SYSTEM_UI_FLAG_FULLSCREEN ────────────────
-  private hideStatusBar(): void {
-    document.documentElement.requestFullscreen?.().catch(() => {});
-  }
-
-  private restoreStatusBar(): void {
-    if (document.fullscreenElement) {
-      document.exitFullscreen?.().catch(() => {});
-    }
   }
 
   // ── Cleanup ───────────────────────────────────────────────────────────────

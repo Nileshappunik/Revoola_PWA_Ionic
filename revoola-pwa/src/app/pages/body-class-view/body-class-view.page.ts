@@ -73,6 +73,7 @@ export class BodyClassViewPage implements OnInit, OnDestroy {
       // Keep navigation responsive even if data hydration is delayed.
       this.router.navigate(['/body-class-video'], {
         state: { videoId: this.videoKey },
+        replaceUrl: true,
       });
       return;
     }
@@ -81,6 +82,7 @@ export class BodyClassViewPage implements OnInit, OnDestroy {
         videoData: JSON.stringify(this.videoData),
         videoId: this.videoKey,
       },
+      replaceUrl: true,
     });
   }
 
